@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial_number: 1
+  model: MyString
+  date_received: 2015-09-27 11:43:30
+  location: MyString
+
+two:
+  serial_number: 1
+  model: MyString
+  date_received: 2015-09-27 11:43:30
+  location: MyString

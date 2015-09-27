@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Serial num:</strong>
+  <%= @cartridge.serial_num %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @cartridge.model %>
+</p>
+
+<p>
+  <strong>Date received:</strong>
+  <%= @cartridge.date_received %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @cartridge.location %>
+</p>
+
+<%= link_to 'Edit', edit_cartridge_path(@cartridge) %> |
+<%= link_to 'Back', cartridges_path %>

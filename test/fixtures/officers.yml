@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_name: MyString
+  first_name: MyString
+  middle_initial: MyString
+  badge_number: 1
+  location_in_department: MyString
+  date_initial_certification: 2015-09-27 11:26:18
+  date_recertification: 2015-09-27 11:26:18
+
+two:
+  last_name: MyString
+  first_name: MyString
+  middle_initial: MyString
+  badge_number: 1
+  location_in_department: MyString
+  date_initial_certification: 2015-09-27 11:26:18
+  date_recertification: 2015-09-27 11:26:18

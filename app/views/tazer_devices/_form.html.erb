@@ -1,0 +1,33 @@
+<%= form_for(@tazer_device) do |f| %>
+  <% if @tazer_device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tazer_device.errors.count, "error") %> prohibited this tazer_device from being saved:</h2>
+
+      <ul>
+      <% @tazer_device.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :serial_number %><br>
+    <%= f.number_field :serial_number %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :date_received %><br>
+    <%= f.datetime_select :date_received %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

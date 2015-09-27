@@ -1,0 +1,45 @@
+<%= form_for(@officer) do |f| %>
+  <% if @officer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@officer.errors.count, "error") %> prohibited this officer from being saved:</h2>
+
+      <ul>
+      <% @officer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_initial %><br>
+    <%= f.text_field :middle_initial %>
+  </div>
+  <div class="field">
+    <%= f.label :badge_number %><br>
+    <%= f.number_field :badge_number %>
+  </div>
+  <div class="field">
+    <%= f.label :location_in_department %><br>
+    <%= f.text_field :location_in_department %>
+  </div>
+  <div class="field">
+    <%= f.label :date_initial_certification %><br>
+    <%= f.datetime_select :date_initial_certification %>
+  </div>
+  <div class="field">
+    <%= f.label :date_recertification %><br>
+    <%= f.datetime_select :date_recertification %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

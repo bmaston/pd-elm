@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @officer.last_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @officer.first_name %>
+</p>
+
+<p>
+  <strong>Middle initial:</strong>
+  <%= @officer.middle_initial %>
+</p>
+
+<p>
+  <strong>Badge number:</strong>
+  <%= @officer.badge_number %>
+</p>
+
+<p>
+  <strong>Location in department:</strong>
+  <%= @officer.location_in_department %>
+</p>
+
+<p>
+  <strong>Date initial certification:</strong>
+  <%= @officer.date_initial_certification %>
+</p>
+
+<p>
+  <strong>Date recertification:</strong>
+  <%= @officer.date_recertification %>
+</p>
+
+<%= link_to 'Edit', edit_officer_path(@officer) %> |
+<%= link_to 'Back', officers_path %>

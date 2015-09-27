@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tazer Devices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Serial number</th>
+      <th>Model</th>
+      <th>Date received</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tazer_devices.each do |tazer_device| %>
+      <tr>
+        <td><%= tazer_device.serial_number %></td>
+        <td><%= tazer_device.model %></td>
+        <td><%= tazer_device.date_received %></td>
+        <td><%= tazer_device.location %></td>
+        <td><%= link_to 'Show', tazer_device %></td>
+        <td><%= link_to 'Edit', edit_tazer_device_path(tazer_device) %></td>
+        <td><%= link_to 'Destroy', tazer_device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tazer device', new_tazer_device_path %>

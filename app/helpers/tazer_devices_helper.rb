@@ -1,0 +1,2 @@
+module TazerDevicesHelper
+end
