@@ -1,0 +1,27 @@
+Officer
+Last Name, First Name, Middle Initial, Badge Num, Location in Dept, Date Initial Certification, Date Recertification
+
+Tazer
+Serial Num, Model, Date Received, Location (inventory, assigned, decommissioned, in repair, out of service)
+
+Cartridge
+Serial Num, Model, Date Received, Location
+
+Activity
+
+rails g scaffold  Officer last_name:string first_name:string middle_initial:string badge_number:integer location_in_department:string date_initial_certification:datetime date_recertification:datetime
+
+rails g scaffold  Tazer_device serial_number:integer model:string date_received:datetime location:string
+
+rails g scaffold  Cartridge serial_num:integer model:string date_received:datetime location:string
+
+Questions:
+* How to add font-awesome to link_to so I dont have to use wording but icons instead of "Show, Edit, Delete"
+* Stylize link_to
+* Format date/time
+* Import CSV (currently getting error)
+NameError in OfficersController#import
+uninitialized constant Officer::CSV
+Rails.root: C:/Users/bvj863/Documents/class_projects/tazer 
+* limit rows to 10, 20, 50, all with pagination
+* Sort table header(s)

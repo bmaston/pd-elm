@@ -27,12 +27,12 @@
 
 <p>
   <strong>Date initial certification:</strong>
-  <%= @officer.date_initial_certification %>
+  <%= @officer.date_initial_certification.strftime('%Y-%m-%d') %>
 </p>
 
 <p>
   <strong>Date recertification:</strong>
-  <%= @officer.date_recertification %>
+  <%= @officer.date_recertification.strftime('%Y-%m-%d') %>
 </p>
 
 <%= link_to 'Edit', edit_officer_path(@officer) %> |

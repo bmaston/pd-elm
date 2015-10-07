@@ -22,3 +22,5 @@ background-color: #ededed;
 .table-striped tbody tr:hover td {
    background-color: #dae4ed;
 }
+
+.hand{cursor:pointer}

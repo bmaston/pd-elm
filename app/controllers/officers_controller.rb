@@ -60,10 +60,10 @@ class OfficersController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def import
     Officer.import(params[:file])
-      redirect_to root_url, notice: "Officers imported."
+      redirect_to officers_url, notice: "Officers imported."
   end
 
   private

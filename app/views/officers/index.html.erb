@@ -4,7 +4,8 @@
 
 
 
-<div  class="container"><div class="pull-right"><i class="fa fa-plus"></i> <%= link_to 'Add Officer', new_officer_path %></div>
+<div  class="container"><div class="pull-right"><i class="fa fa-plus"></i> <%= link_to 'add officer', new_officer_path %>  ::  <i class="fa fa-file-excel-o"></i>  <a  data-toggle="modal" data-target="#OffDetail" class="hand">bulk upload </a></div>
+
 <table  class="table table-striped table-hover table-bordered"  >
   <thead style="background-color:#fff;">
     <tr>
@@ -22,27 +23,42 @@
   <tbody>
     <% @officers.each do |officer| %>
       <tr>
+        <td   class="hand" ><%= officer.last_name %></td>
 
-        <td><%= officer.last_name %></td>
-        <td><%= officer.first_name %></td>
-        <td><%= officer.middle_initial %></td>
-        <td><%= officer.badge_number %></td>
-        <td><%= officer.location_in_department %></td>
-        <td><%= officer.date_initial_certification %></td>
-        <td><%= officer.date_recertification %></td>
-        <td><%= link_to 'Show', officer %><i class="fa fa-sign-in"></i></td>
-        <td><%= link_to 'Edit', edit_officer_path(officer) %><i class="fa fa-pencil-square-o"></i></td>
-        <td><%= link_to 'Destroy', officer, method: :delete, data: { confirm: 'Are you sure?' } %><i class="fa fa-trash-o"></i></td>
+        <td  onclick="location.href='<%= officer_path(officer) %>'" class="hand"><%= officer.first_name %></td>
+        <td  onclick="location.href='<%= officer_path(officer) %>'" class="hand"><%= officer.middle_initial %></td>
+        <td  onclick="location.href='<%= officer_path(officer) %>'" class="hand"><%= officer.badge_number %></td>
+        <td  onclick="location.href='<%= officer_path(officer) %>'" class="hand"><%= officer.location_in_department %></td>
+        <td  onclick="location.href='<%= officer_path(officer) %>'" class="hand"><%= officer.date_initial_certification.strftime('%Y-%m-%d') %></td>
+        <td  onclick="location.href='<%= officer_path(officer) %>'" class="hand"><%= officer.date_recertification.strftime('%Y-%m-%d') %></td>
+        <!-- <td><%= link_to (fa_icon "sign-in"), officer %></td> -->
+        <td><%= link_to (fa_icon "pencil-square-o"), edit_officer_path(officer) %></td>
+        <td><%= link_to (fa_icon "trash-o"), officer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
 <br>
-<!-- EXCEL STUFF HERE -->
-<h2>Import Officers</h2>
-<%= form_tag import_officers_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
-<!-- EXCEL STUFF HERE -->
+
+<div id="OffDetail" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;  </button>
+        <h4 class="modal-title" id="myModalLabel">Import Officers</h4>
+      </div>
+      <div class="modal-body">
+        <!-- EXCEL STUFF HERE -->
+          <%= form_tag import_officers_path, multipart: true do %>
+          <%= file_field_tag :file %> <%= submit_tag "Upload" %>
+        <% end %>
+        <!-- EXCEL STUFF HERE -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
